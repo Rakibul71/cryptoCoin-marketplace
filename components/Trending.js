@@ -9,9 +9,9 @@ import Rate from "../components/cmc-table/Rate"
 import TrendingCard from "./TrendingCard"
 
 const styles = {
-    trendingWrapper: `max-auto max-w-screen-2xl`,
+    trendingWrapper: `mx-auto max-w-screen-2xl`,
     h1: `text-3xl text-white`,
-    flexCenter: `flex items-center`
+    flexCenter: `flex items-center,`
 }
 const trendingData = [
     {
@@ -44,26 +44,26 @@ const Trending = () => {
         <div className="text-white">
             <div className={styles.trendingWrapper}>
                 <div className="flex justify-between">
-                    <h1 className={styles.h1}>Todays Cryptocurrency prices  by Market Cap</h1>
+                    <h1 className={styles.h1}>Todays Cryptocurrency Prices by Market Cap</h1>
 
                     <div className="flex">
-                        <p className='text-gray-400'>Highlights &nbsp;</p>
+                        <p className="text-gray-400 ">Highlights &nbsp;</p>
                         <ReactSwitch checked={checked} onChange={() => { setChecked(!checked) }} />
                     </div>
                 </div>
                 <br />
                 <div className="flex">
-                    <p className='text-gray-400'>The global market cap is $1.74T &nbsp;</p>
-                    <span><Rate isIncrement={true} rate="0.53%" /></span>
-                    <p>&nbsp; decrease over the last day. <span className="underline">Read More</span></p>
-                    <br />
-                    <div className={styles.flexCenter}>
-                        <TrendingCard title="trending" icon={fire} trendingData={trendingData} />
-                        <TrendingCard title="Biggest Gainers" icon={gainers} trendingData={trendingData} />
-                        <TrendingCard title="Recently Added" icon={recent} trendingData={trendingData} />
-                    </div>
+                    <p>The global crypto market cap is $1.74T, a &nbsp; </p>
+                    <span> <Rate isIncrement={true} rate='0.53%' /> </span>
+                    <p> &nbsp; decrease over the last day. <span className="underline">Read More</span> </p>
                 </div>
+                <br />
 
+                <div className={styles.flexCenter}>
+                    <TrendingCard title='Trending' icon={fire} trendingData={trendingData} />
+                    <TrendingCard title='Biggest Gainers' icon={gainers} trendingData={trendingData} />
+                    <TrendingCard title='Recently Added' icon={recent} trendingData={trendingData} />
+                </div>
             </div>
         </div>
     );
